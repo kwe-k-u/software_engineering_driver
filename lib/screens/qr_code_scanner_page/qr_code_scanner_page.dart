@@ -1,6 +1,4 @@
 import 'package:bus_driver/screens/qr_code_confirm_page/qr_code_confirm_page.dart';
-import 'package:bus_driver/widgets/custom_button.dart';
-import 'package:bus_driver/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 

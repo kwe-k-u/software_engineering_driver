@@ -115,3 +115,14 @@ Future<List<Ticket>> getTripTickets(String tripId) async {
   
   return tickets;
 }
+
+
+Future<Ticket?> getTripById(String id) async {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  DocumentSnapshot<Map<String, dynamic>> result = await firestore.collection("public/transactions/tickets").doc(id).get();
+  if (result.exists){
+    return Ticket.fromJson(result.data()!);
+  }
+  return null;
+}

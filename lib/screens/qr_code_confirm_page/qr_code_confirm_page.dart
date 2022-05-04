@@ -1,3 +1,4 @@
+import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
 
 class QrCodeConfirmPage extends StatefulWidget {
@@ -27,18 +28,19 @@ class _QrCodeConfirmPageState extends State<QrCodeConfirmPage> {
 
             Expanded(
               child: FutureBuilder(
-                future: Future.delayed(const Duration(seconds: 3)),
+                future: getTripById(widget.ticketId),
                 builder: (context,snapshot){
                   if (snapshot.connectionState == ConnectionState.done){
                     if (snapshot.data == null){
                       return Center(child: Text("${widget.ticketId} doesn't exist in the database"),);
                     } else {
-                      return Text("Ticket information"); //todo implement inferface to view ticket details and mark as used
+                      return Text("Ticket information"); //todo implement interface to view ticket details and mark as used
                     }
                   }
                   return Center(child:
                     Row(
-                      children: [
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
                         CircularProgressIndicator(),
                         Text("Verifying ID")
                       ],
