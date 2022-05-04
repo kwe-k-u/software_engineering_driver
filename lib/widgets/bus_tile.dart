@@ -1,10 +1,10 @@
 import 'dart:ui';
 
+import 'package:bus_driver/screens/bus_details/bus_details.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/widgets/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:software_engineering/screens/bus_details/bus_details.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/widgets/custom_button.dart';
 
 
 class BusTile extends StatelessWidget {

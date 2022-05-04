@@ -1,15 +1,14 @@
+import 'package:bus_driver/environment.dart';
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/screens/login_screen/login_screen.dart';
+import 'package:bus_driver/screens/page_control/page_control.dart';
+import 'package:bus_driver/utils/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
-import 'package:software_engineering/environment.dart';
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/screens/homepage/homepage.dart';
-import 'package:software_engineering/screens/login_screen/login_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:software_engineering/screens/page_control/page_control.dart';
-import 'package:software_engineering/utils/constants.dart';
 
 void main() async {
 
@@ -17,7 +16,7 @@ void main() async {
   await dotenv.load(fileName: Environment.filename);
 
   if (Firebase.apps.isEmpty) {
-    await Firebase.initializeApp( name: "software_engineering",
+    await Firebase.initializeApp( name: "bus_driver",
         options:
         FirebaseOptions(
             apiKey: Environment.apiKey,
@@ -48,7 +47,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    final FirebaseAuth auth = FirebaseAuth.instance;
     context.read<AppState>().auth = FirebaseAuth.instance;
   }
 
@@ -64,19 +62,40 @@ class _MyAppState extends State<MyApp> {
           iconColor: ashesiRed
         )
       ),
-      home: StreamBuilder<User?>(
-        stream: context.read<AppState>().auth!.userChanges(),
-        builder: (context,snapshot){
-
-          if (snapshot.hasData) {
-            Navigator.of(context).popUntil((route) => route.isFirst);
-            return const PageControl();
-          }
-          Navigator.of(context).popUntil((route) => route.isFirst);
-          return const LoginScreen();
-        },
-      ),
+      // home: SplashScreen(),
+      home: BaseScreen()
     );
   }
 }
 
+
+
+class BaseScreen extends StatefulWidget {
+  const BaseScreen({Key? key}) : super(key: key);
+
+  @override
+  _BaseScreenState createState() => _BaseScreenState();
+}
+
+class _BaseScreenState extends State<BaseScreen> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+        child: StreamBuilder<User?>(
+          stream: context.read<AppState>().auth!.userChanges(),
+          builder: (context,snapshot){
+
+            if (snapshot.hasData) {
+              Navigator.of(context).popUntil((route) => route.isFirst);
+              return const PageControl();
+            }
+            Navigator.of(context).popUntil((route) => route.isFirst);
+            return const LoginScreen();
+          },
+        )
+        )
+    );
+  }
+}

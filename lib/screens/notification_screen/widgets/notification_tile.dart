@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:software_engineering/models/notification.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/utils/extensions.dart';
+import 'package:bus_driver/models/notification.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/utils/extensions.dart';
 
 
 class NotificationTile extends StatelessWidget {

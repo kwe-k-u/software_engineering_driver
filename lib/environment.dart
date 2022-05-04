@@ -10,4 +10,7 @@ class Environment{
   static String get productId => dotenv.env["PRODUCT_ID"]!;
   static String get messagingSenderId => dotenv.env["MESSAGING_SENDER_ID"]!;
   static String get appId => dotenv.env["APP_ID"]!;
+  static String get flutterwavePublicKey => dotenv.env["FLUTTERWAVE_PUBLIC_KEY"]!;
+  static String get flutterwaveSecretKey => dotenv.env["FLUTTERWAVE_SECRET_KEY"]!;
+  static String get flutterwaveEncryptionKey => dotenv.env["FLUTTERWAVE_ENCRYPTION_KEY"]!;
 }

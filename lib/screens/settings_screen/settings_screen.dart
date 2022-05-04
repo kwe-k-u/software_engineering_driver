@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:software_engineering/edit_profile_page/edit_profile_page.dart';
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/screens/about_page/about_page.dart';
-import 'package:software_engineering/widgets/custom_button.dart';
-import 'package:software_engineering/widgets/heading_text.dart';
+import 'package:bus_driver/edit_profile_page/edit_profile_page.dart';
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/screens/about_page/about_page.dart';
+import 'package:bus_driver/widgets/custom_button.dart';
+import 'package:bus_driver/widgets/heading_text.dart';
 import 'package:provider/provider.dart';
-import 'package:software_engineering/widgets/profile_image.dart';
+import 'package:bus_driver/widgets/profile_image.dart';
 
 
 
@@ -41,17 +41,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
 
 
-             CircleAvatar(
-              minRadius: 40,
-              maxRadius: 60,
-              child: context.read<AppState>().auth!.currentUser!.photoURL != null ?
-              ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                  child: Image.network(context.read<AppState>().auth!.currentUser!.photoURL!)
-              )
-                  : const Icon(Icons.account_circle_outlined,size: 80,),
-            ),
-            // ProfileImage(),
+            ProfileImage(image: context.read<AppState>().auth!.currentUser!.photoURL),
 
             HeadingText(context.read<AppState>().auth!.currentUser!.displayName!),
 
@@ -80,21 +70,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
 
             const ListTile(
-              leading: Icon(Icons.credit_card_rounded),
-              title: Text("Payment methods"),
+              leading: Icon(Icons.notifications_outlined),
+              title: Text("Notifications"),
               trailing: Icon(Icons.chevron_right),
             ),
 
             const ListTile(
-              leading: Icon(Icons.notifications_outlined),
-              title: Text("Notifications"),
-              trailing: const Icon(Icons.chevron_right),
-            ),
-
-            const ListTile(
-              leading: const Icon(Icons.bug_report_outlined),
-              title: const Text("Report a problem"),
-              trailing: const Icon(Icons.chevron_right),
+              leading: Icon(Icons.bug_report_outlined),
+              title: Text("Report a problem"),
+              trailing: Icon(Icons.chevron_right),
             ),
 
             ListTile(

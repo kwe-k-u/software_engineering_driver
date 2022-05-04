@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/widgets/ticket_reciept.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/widgets/ticket_reciept.dart';
 
 
 class TicketReceiptTile extends StatelessWidget {

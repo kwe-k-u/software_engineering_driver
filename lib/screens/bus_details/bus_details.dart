@@ -1,6 +1,6 @@
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/widgets/custom_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BusDetails extends StatefulWidget {

@@ -4,13 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/utils/firestore_helper.dart';
-import 'package:software_engineering/widgets/custom_button.dart';
-import 'package:software_engineering/widgets/custom_text_field.dart';
-import 'package:software_engineering/widgets/input_section.dart';
-import 'package:software_engineering/widgets/profile_image.dart';
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/utils/firestore_helper.dart';
+import 'package:bus_driver/widgets/custom_button.dart';
+import 'package:bus_driver/widgets/custom_text_field.dart';
+import 'package:bus_driver/widgets/input_section.dart';
+import 'package:bus_driver/widgets/profile_image.dart';
 
 class EditProfilePage extends StatefulWidget {
   final String name;

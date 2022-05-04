@@ -1,7 +1,7 @@
 
 
-import 'package:software_engineering/models/RouteLocation.dart';
-import 'package:software_engineering/models/driver.dart';
+import 'package:bus_driver/models/RouteLocation.dart';
+import 'package:bus_driver/models/driver.dart';
 
 class Bus{
   final String id;

@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
-import 'package:software_engineering/models/notification.dart';
-import 'package:software_engineering/screens/notification_screen/widgets/notification_tile.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/utils/firestore_helper.dart';
+import 'package:bus_driver/models/notification.dart';
+import 'package:bus_driver/screens/notification_screen/widgets/notification_tile.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/utils/firestore_helper.dart';
 
 
 class NotificationScreen extends StatefulWidget {

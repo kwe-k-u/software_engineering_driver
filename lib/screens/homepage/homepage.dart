@@ -1,13 +1,16 @@
+import 'package:bus_driver/models/bus.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/models/bus.dart';
-import 'package:software_engineering/screens/homepage/widgets/account_balance_and_ticket.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/utils/extensions.dart';
-import 'package:software_engineering/utils/firestore_helper.dart';
-import 'package:software_engineering/widgets/bus_tile.dart';
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/models/bus.dart';
+import 'package:bus_driver/screens/homepage/widgets/account_balance_and_ticket.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/utils/extensions.dart';
+import 'package:bus_driver/utils/firestore_helper.dart';
+import 'package:bus_driver/widgets/bus_tile.dart';
 import 'package:provider/provider.dart';
-import 'package:software_engineering/widgets/profile_image.dart';
+import 'package:bus_driver/widgets/profile_image.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);

@@ -1,12 +1,12 @@
 
 import "package:flutter/material.dart";
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/screens/login_screen/login_screen.dart';
-import 'package:software_engineering/widgets/curved_background.dart';
-import 'package:software_engineering/widgets/custom_button.dart';
-import 'package:software_engineering/widgets/custom_text_field.dart';
-import 'package:software_engineering/widgets/heading_text.dart';
-import 'package:software_engineering/widgets/input_section.dart';
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/screens/login_screen/login_screen.dart';
+import 'package:bus_driver/widgets/curved_background.dart';
+import 'package:bus_driver/widgets/custom_button.dart';
+import 'package:bus_driver/widgets/custom_text_field.dart';
+import 'package:bus_driver/widgets/heading_text.dart';
+import 'package:bus_driver/widgets/input_section.dart';
 import 'package:provider/provider.dart';
 
 
@@ -77,7 +77,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     const Icon(Icons.info),
-                    const Text("This app is only for\nAshesi faculty"),
+                    const Text("This app is only for\nAshesi bus drivers"),
                     CustomButton(text: "Create Account", onPressed: (){
 
                       context.read<AppState>().signup(email: email.text, name: name.text, password: password.text);
@@ -87,15 +87,6 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 const Spacer(),
                 const Text("Already have an account?"),
-                TextButton(
-                  child: const Text("Log In"),
-                  onPressed: (){
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context)=> const LoginScreen()
-                        )
-                    );
-                  },
-                ),
 
                 TextButton(onPressed: (){
                   Navigator.pushReplacement(context,

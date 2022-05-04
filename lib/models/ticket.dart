@@ -1,4 +1,4 @@
-import 'package:software_engineering/models/bus.dart';
+import 'package:bus_driver/models/bus.dart';
 
 enum TicketStatus{
   active,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:software_engineering/screens/homepage/homepage.dart';
-import 'package:software_engineering/screens/notification_screen/notification_screen.dart';
-import 'package:software_engineering/screens/settings_screen/settings_screen.dart';
-import 'package:software_engineering/screens/ticket_history/ticket_history.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/widgets/ticket_reciept.dart';
+import 'package:bus_driver/screens/homepage/homepage.dart';
+import 'package:bus_driver/screens/notification_screen/notification_screen.dart';
+import 'package:bus_driver/screens/settings_screen/settings_screen.dart';
+import 'package:bus_driver/screens/ticket_history/ticket_history.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/widgets/ticket_reciept.dart';
 
 class PageControl extends StatefulWidget {
   const PageControl({Key? key}) : super(key: key);

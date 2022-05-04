@@ -1,8 +1,9 @@
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/models/ticket.dart';
+import 'package:bus_driver/utils/firestore_helper.dart';
+import 'package:bus_driver/utils/payment_handler.dart';
+import 'package:bus_driver/widgets/custom_button.dart';
 import "package:flutter/material.dart";
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/models/ticket.dart';
-import 'package:software_engineering/utils/firestore_helper.dart';
-import 'package:software_engineering/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
 
@@ -78,7 +79,10 @@ class _CreditBalance extends StatelessWidget {
               ),
               CustomButton(
                   text: "TOP UP",
-                  onPressed: (){},
+                  onPressed: ()async{
+                    await PaymentHandler.initiatePayment(context: context, amount: 3.00, fullName: "Kweku Acquaye");
+
+                  },
                 radius: 6,
               )
             ],

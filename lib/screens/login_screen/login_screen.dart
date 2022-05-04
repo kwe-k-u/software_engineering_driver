@@ -1,12 +1,12 @@
 
 import "package:flutter/material.dart";
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/screens/signup_screen/signup_screen.dart';
-import 'package:software_engineering/widgets/curved_background.dart';
-import 'package:software_engineering/widgets/custom_button.dart';
-import 'package:software_engineering/widgets/custom_text_field.dart';
-import 'package:software_engineering/widgets/heading_text.dart';
-import 'package:software_engineering/widgets/input_section.dart';
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/screens/signup_screen/signup_screen.dart';
+import 'package:bus_driver/widgets/curved_background.dart';
+import 'package:bus_driver/widgets/custom_button.dart';
+import 'package:bus_driver/widgets/custom_text_field.dart';
+import 'package:bus_driver/widgets/heading_text.dart';
+import 'package:bus_driver/widgets/input_section.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {

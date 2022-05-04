@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
-import 'package:software_engineering/models/app_state.dart';
-import 'package:software_engineering/models/ticket.dart';
-import 'package:software_engineering/screens/ticket_history/widget/ticket_receipt_tile.dart';
-import 'package:software_engineering/utils/constants.dart';
-import 'package:software_engineering/utils/firestore_helper.dart';
+import 'package:bus_driver/models/app_state.dart';
+import 'package:bus_driver/models/ticket.dart';
+import 'package:bus_driver/screens/ticket_history/widget/ticket_receipt_tile.dart';
+import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:provider/provider.dart';
 
 

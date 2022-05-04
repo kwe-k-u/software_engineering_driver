@@ -1,4 +1,4 @@
-package com.duala.software_engineering
+package com.duala.bus_driver
 
 import io.flutter.embedding.android.FlutterActivity
 

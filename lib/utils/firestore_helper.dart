@@ -3,11 +3,11 @@
 
 import 'dart:io';
 
+import 'package:bus_driver/models/bus.dart';
+import 'package:bus_driver/models/notification.dart';
+import 'package:bus_driver/models/ticket.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:software_engineering/models/bus.dart';
-import 'package:software_engineering/models/notification.dart';
-import 'package:software_engineering/models/ticket.dart';
 
 Future<List<Bus>> getAvailableBuses({DateTime? date}) async {
   List<Bus> buses = [];
@@ -23,7 +23,7 @@ Future<List<Bus>> getAvailableBuses({DateTime? date}) async {
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
   
-  QuerySnapshot<Map<String, dynamic>> results = await firestore.doc("public/bus_system")
+  QuerySnapshot<Map<String, dynamic>> results = await firestore.doc("public/bus_driver")
       .collection("0").get();
       // .collection(_date.toIso8601String()).get();
 
@@ -43,7 +43,7 @@ Future<List<Ticket>> getUserHistory(String id) async {
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  QuerySnapshot<Map<String, dynamic>> results = await firestore.collection("public/bus_system/departure")
+  QuerySnapshot<Map<String, dynamic>> results = await firestore.collection("public/bus_driver/departure")
   .where("userId",isEqualTo: id).get();
 
   for (QueryDocumentSnapshot<Map<String,dynamic>> document in results.docs){
