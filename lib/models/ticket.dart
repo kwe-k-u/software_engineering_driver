@@ -9,19 +9,22 @@ enum TicketStatus{
 class Ticket{
   final String id;
   final String paymentMethod; //todo change to enum
-  final Bus bus;
+  // final Bus bus;
+  String tripId;
   double amountPaid;
   TicketStatus status;
+  ///index for this ticket in the bus
   int bookingCount;
   final String userId;
   final DateTime dateBooked;
-//todo transaction id
+  final String transactionId;
 
 
   Ticket({
     required this.id,
     required this.paymentMethod,
-    required this.bus,
+    required this.tripId,
+    required this.transactionId,
     required this.amountPaid,
     required this.status,
     required this.userId,
@@ -31,9 +34,11 @@ class Ticket{
 
   factory Ticket.fromJson(Map<String,dynamic> map) => Ticket(
       id: map["id"],
+      transactionId: map["transactionId"],
       userId: map["userId"],
       paymentMethod:map[" paymentMethod"],
-      bus: Bus.fromJson(map["bus"]),
+      tripId: map["tripId"],
+      // bus: Bus.fromJson(map["bus"]),
       amountPaid: map["amountPaid"],
       status: TicketStatus.values.firstWhere((element) => element.name == map["status"]),
       bookingCount: map["bookingCount"],
@@ -43,7 +48,8 @@ class Ticket{
   Map<String,dynamic> toMap() => {
     "id" : id,
     "paymentMethod" : paymentMethod,
-    "bus" : bus.toJson(),
+    // "bus" : bus.toJson(),
+    "tripId" : tripId,
     "amountPaid" : amountPaid,
     "status": status.name,
     "bookingCount" : bookingCount,

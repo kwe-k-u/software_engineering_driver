@@ -55,7 +55,6 @@ Future<Trip?> getUpcomingTrip (String userId) async {
   return null;
 }
 
-
 Future<List<Bus>> getAllBuses() async {
   List<Bus> bus = [];
   
@@ -68,8 +67,6 @@ Future<List<Bus>> getAllBuses() async {
   print(bus);
   return bus;
 }
-
-
 
 Future<List<NotificationModel>> getNotifications() async {
   List<NotificationModel> notifications = [];
@@ -86,7 +83,6 @@ Future<List<NotificationModel>> getNotifications() async {
   // print(notifications);
   return notifications;
 }
-
 
 Future<String> uploadImage({required String id, required File image}) async {
   FirebaseStorage storage = FirebaseStorage.instance;
@@ -108,4 +104,17 @@ Future<void> uploadTrip(Trip trip) async {
   trip.tripId = doc.id;
   await doc.set(trip.toJson());
 
+}
+
+Future<List<Ticket>> getTripTickets(String tripId) async {
+  List<Ticket> tickets = [];
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  
+  QuerySnapshot<Map<String, dynamic>> results = await firestore.collection("public/transactions/tickets").where("tripId", isEqualTo: tripId).get();
+
+  for (DocumentSnapshot<Map<String,dynamic>> doc in results.docs){
+    tickets.add(Ticket.fromJson(doc.data()!));
+  }
+  
+  return tickets;
 }

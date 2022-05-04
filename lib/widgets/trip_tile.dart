@@ -1,5 +1,6 @@
 import 'package:bus_driver/models/trip.dart';
 import 'package:bus_driver/screens/bus_details/bus_details.dart';
+import 'package:bus_driver/screens/trip_ticket_list/trip_ticket_list.dart';
 import 'package:bus_driver/utils/constants.dart';
 import 'package:bus_driver/utils/extensions.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class TripTile extends StatelessWidget {
         showDialog(
             context: context,
             barrierColor: ashesiGrey.withOpacity(0.8),
-            builder: (context)=> const BusDetails()
+            builder: (context)=> TripTicketList(tripId: trip.tripId)
         );
       },
       child: Card(
