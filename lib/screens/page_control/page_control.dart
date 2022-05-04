@@ -1,10 +1,9 @@
+import 'package:bus_driver/screens/buses_list/buses_list.dart';
 import 'package:flutter/material.dart';
 import 'package:bus_driver/screens/homepage/homepage.dart';
 import 'package:bus_driver/screens/notification_screen/notification_screen.dart';
 import 'package:bus_driver/screens/settings_screen/settings_screen.dart';
-import 'package:bus_driver/screens/ticket_history/ticket_history.dart';
 import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/widgets/ticket_reciept.dart';
 
 class PageControl extends StatefulWidget {
   const PageControl({Key? key}) : super(key: key);
@@ -34,7 +33,7 @@ class _PageControlState extends State<PageControl> with SingleTickerProviderStat
               physics: const NeverScrollableScrollPhysics(),
               children: const [
                 Homepage(),
-                TicketHistory(),
+                BusesList(),
                 NotificationScreen(),
                 SettingsScreen(),
               ],
@@ -61,7 +60,7 @@ class _PageControlState extends State<PageControl> with SingleTickerProviderStat
               indicatorColor: Colors.transparent,
               tabs: const [
                 Tab(icon: Icon(Icons.home), text: "Home",),
-                Tab(icon: Icon(Icons.history), text: "History",),
+                Tab(icon: Icon(Icons.directions_bus), text: "Buses",),
                 Tab(icon: Icon(Icons.notifications_outlined), text: "Notifications",),
                 Tab(icon: Icon(Icons.settings), text: "Settings",),
               ],

@@ -1,4 +1,5 @@
 import 'package:bus_driver/models/bus.dart';
+import 'package:bus_driver/models/trip.dart';
 import 'package:bus_driver/utils/constants.dart';
 import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class _HomepageState extends State<Homepage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Available buses ",
+                Text("Upcoming Trips ",
                   style: Theme.of(context).textTheme.labelLarge!
                   .copyWith(
                     fontSize: 16,
@@ -77,7 +78,7 @@ class _HomepageState extends State<Homepage> {
 
                           initialDate: busDate,
                           firstDate: DateTime.now(),
-                          lastDate: DateTime.now().add(const Duration(days: 7)),
+                          lastDate: DateTime.now().add(const Duration(days: 30)),
                       );
 
                       setState(() {
@@ -89,16 +90,17 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
           Expanded(
-            child:FutureBuilder<List<Bus>>(
-              future: getAvailableBuses(date: busDate),
+            child:FutureBuilder<List<Trip>>(
+              future: getTrips(date: busDate),
               builder: (context,snapshot) {
                 if (snapshot.connectionState == ConnectionState.done){
                   if (snapshot.data != null && snapshot.data!.isNotEmpty) {
                     return  ListView.builder(
+                      itemCount: snapshot.data!.length,
                       itemBuilder: (context,index)=> BusTile()
                   );
                   } else {
-                    return Center(child: Text("No Buses for ${busDate.asString()}"),);
+                    return Center(child: Text("No Trips on ${busDate.asString()}"),);
                   }
                 }
                 return const Center(

@@ -58,6 +58,10 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // primarySwatch: MaterialColor(ashesiRed.value, {}),
+        appBarTheme: const AppBarTheme(
+          color: ashesiRed,
+          centerTitle: true
+        ),
         listTileTheme: const ListTileThemeData(
           iconColor: ashesiRed
         )
