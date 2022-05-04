@@ -22,7 +22,6 @@ class Bus{
 
 
   factory Bus.fromJson(Map<String,dynamic> map) {
-    print(map["maxCapacity"]);
     return Bus(
       id: map["id"] ?? "",
       imageUrl:  map["imageUrl"] ?? "",

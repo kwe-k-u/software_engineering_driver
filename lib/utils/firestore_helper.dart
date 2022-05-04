@@ -34,7 +34,6 @@ Future<List<Trip>> getTrips({DateTime? date}) async {
     data.addAll(trip.data());
     data['id'] = trip.id;
     trips.add(Trip.fromJson(trip.data()));
-    print("e");
   }
 
   return trips;
@@ -43,7 +42,7 @@ Future<List<Trip>> getTrips({DateTime? date}) async {
 Future<Trip?> getUpcomingTrip (String userId) async {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   print("userid $userId");
-;  QuerySnapshot<Map<String, dynamic>> result = await firestore
+  QuerySnapshot<Map<String, dynamic>> result = await firestore
       .collection("public/bus_system/departure")
       .where("driverId", isEqualTo: userId)
       .limit(1)
@@ -61,10 +60,8 @@ Future<List<Bus>> getAllBuses() async {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   QuerySnapshot<Map<String, dynamic>> docs = await firestore.collection("public/bus_system/buses").get();
   for (DocumentSnapshot<Map<String,dynamic>> info in docs.docs){
-    print(info.data());
     bus.add(Bus.fromJson(info.data()!));
   }
-  print(bus);
   return bus;
 }
 

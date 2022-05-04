@@ -1,6 +1,7 @@
 import 'package:bus_driver/models/app_state.dart';
 import 'package:bus_driver/models/ticket.dart';
 import 'package:bus_driver/models/trip.dart';
+import 'package:bus_driver/screens/qr_code_scanner_page/qr_code_scanner_page.dart';
 import 'package:bus_driver/utils/extensions.dart';
 import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:bus_driver/widgets/custom_button.dart';
@@ -66,7 +67,10 @@ class _CreditBalance extends StatelessWidget {
               CustomButton(
                   text: "Scan receipt",
                   onPressed: ()async{
-
+                    Navigator.push(context, 
+                        MaterialPageRoute(builder: (context)=> const QrCodeScannerPage()
+                        )
+                    );
                   },
                 radius: 6,
               )

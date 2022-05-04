@@ -8,7 +8,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
-import 'package:provider/provider.dart';
 
 void main() async {
 
@@ -86,8 +85,7 @@ class _BaseScreenState extends State<BaseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-        child: StreamBuilder<User?>(
+        body: StreamBuilder<User?>(
           stream: context.read<AppState>().auth!.userChanges(),
           builder: (context,snapshot){
 
@@ -98,7 +96,6 @@ class _BaseScreenState extends State<BaseScreen> {
             Navigator.of(context).popUntil((route) => route.isFirst);
             return const LoginScreen();
           },
-        )
         )
     );
   }
