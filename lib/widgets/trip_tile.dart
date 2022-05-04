@@ -1,14 +1,16 @@
-import 'dart:ui';
-
+import 'package:bus_driver/models/trip.dart';
 import 'package:bus_driver/screens/bus_details/bus_details.dart';
 import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/widgets/custom_button.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bus_driver/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 
-class BusTile extends StatelessWidget {
-  const BusTile({Key? key}) : super(key: key);
+class TripTile extends StatelessWidget {
+  final Trip trip;
+  const TripTile({
+    Key? key,
+    required this.trip,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,63 +38,57 @@ class BusTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
 
-                //left column
-                Column(
-                  children: [
-                    Placeholder(
-                      fallbackWidth: size.width * 0.3,
-                      fallbackHeight: size.height * 0.13,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: Text("No. GR 455 -17",
-                        style: Theme.of(context).textTheme.labelLarge,
-                      ),
-                    )
-                  ],
-                ),
+                
 
-                //middle column
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _DestinationWidget(
-                      label: "from",
-                      location: "Accra",
-                    ),
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        color: ashesiRed,
-                        height: double.maxFinite,
-                        width: 2,
+                SizedBox(
+                  width: size.width * 0.4,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _DestinationWidget(
+                        label: "from",
+                        location: trip.pickupLocation,
                       ),
-                    ),
-                    _DestinationWidget(
-                      label: "to",
-                      location: "Ashesi University",
-                    ),
-                  ],
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
+                          color: ashesiRed,
+                          height: double.maxFinite,
+                          width: 2,
+                        ),
+                      ),
+                      _DestinationWidget(
+                        label: "to",
+                        location: trip.dropOffLocation,
+                      ),
+                    ],
+                  ),
                 ),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    CustomButton(text: "Book", onPressed: (){}, radius: 8,),
-                    Spacer(flex: 2,),
+
                     RichText(text: TextSpan(
-                      text: "GHC ",
-                      style: Theme.of(context).textTheme.labelLarge!
-                        .copyWith(fontSize: 16),
+                        text: trip.tripDate.asString(),
+                        style: Theme.of(context).textTheme.titleMedium!
+                            .copyWith(fontWeight: FontWeight.w600,
+                        )
+                    )),
+                    RichText(text: TextSpan(
+                      text: "Departure Time: ",
+                      style: Theme.of(context).textTheme.titleSmall,
                       children: [
                         TextSpan(
-                          text: "3.00",
+                          text: trip.setOffTime.format(context),
                           style: Theme.of(context).textTheme.titleMedium!
                             .copyWith(fontWeight: FontWeight.w600,
-                            fontSize: 24
                           )
                         )
                       ]
                     )),
-                    Spacer()
+                    const Spacer(),
+                    Text(trip.busId, style: Theme.of(context).textTheme.headlineSmall,),
+                    Text("20/${trip.capacity} seats")
                   ],
                 )
               ],
@@ -121,7 +117,7 @@ class _DestinationWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Icon(Icons.location_on_outlined, color: ashesiRed,),
+        const Icon(Icons.location_on_outlined, color: ashesiRed,),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

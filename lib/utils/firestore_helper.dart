@@ -40,22 +40,20 @@ Future<List<Trip>> getTrips({DateTime? date}) async {
   return trips;
 }
 
-// Future<List<Ticket>> getUserHistory(String id) async {
-//   List<Ticket> reciepts = [];
-//
-//   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-//
-//   QuerySnapshot<Map<String, dynamic>> results = await firestore.collection("public/bus_driver/departure")
-//   .where("userId",isEqualTo: id).get();
-//
-//   for (QueryDocumentSnapshot<Map<String,dynamic>> document in results.docs){
-//     reciepts.add(Ticket.fromJson(document.data()));
-//   }
-//
-//
-//
-//   return reciepts;
-// }
+Future<Trip?> getUpcomingTrip (String userId) async {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  print("userid $userId");
+;  QuerySnapshot<Map<String, dynamic>> result = await firestore
+      .collection("public/bus_system/departure")
+      .where("driverId", isEqualTo: userId)
+      .limit(1)
+      .get();
+  if (result.docs.isNotEmpty){
+    return Trip.fromJson(result.docs.first.data());
+  }
+
+  return null;
+}
 
 
 Future<List<Bus>> getAllBuses() async {
@@ -97,16 +95,17 @@ Future<String> uploadImage({required String id, required File image}) async {
 }
 
 Future<void> editTrip(Trip trip) async {
-  //todo implement edit
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  await firestore.collection("public/bus_system/departure").doc().set(trip.toJson());
+  await firestore.collection("public/bus_system/departure").doc(trip.tripId).set(trip.toJson());
 
 }
 
 Future<void> uploadTrip(Trip trip) async {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  await firestore.collection("public/bus_system/departure").doc().set(trip.toJson());
+  DocumentReference doc = firestore.collection("public/bus_system/departure").doc();
+  trip.tripId = doc.id;
+  await doc.set(trip.toJson());
 
 }

@@ -169,6 +169,7 @@ class _CreateTripState extends State<CreateTrip> {
                 onPressed: ()async{
                   Trip trip = Trip(
                       busId: bus.id,
+                      driverId: context.read<AppState>().auth!.currentUser!.uid,
                       capacity: 30,
                       tripId: "",
                       driverName: context.read<AppState>().auth!.currentUser!.displayName!,
@@ -181,7 +182,7 @@ class _CreateTripState extends State<CreateTrip> {
                   );
 
                   List<Future> upload = [];
-                  for (DateTime date in range.todateList()) {
+                  for (DateTime date in range.toDateList()) {
                     trip.tripDate = date;
                     if (widget.trip != null) {
                       upload.add(editTrip(trip));

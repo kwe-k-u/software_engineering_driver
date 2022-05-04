@@ -4,12 +4,9 @@ import 'package:bus_driver/utils/constants.dart';
 import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:bus_driver/models/app_state.dart';
-import 'package:bus_driver/models/bus.dart';
-import 'package:bus_driver/screens/homepage/widgets/account_balance_and_ticket.dart';
-import 'package:bus_driver/utils/constants.dart';
+import 'package:bus_driver/screens/homepage/widgets/ticket_verfication_and_upcoming.dart';
 import 'package:bus_driver/utils/extensions.dart';
-import 'package:bus_driver/utils/firestore_helper.dart';
-import 'package:bus_driver/widgets/bus_tile.dart';
+import 'package:bus_driver/widgets/trip_tile.dart';
 import 'package:provider/provider.dart';
 import 'package:bus_driver/widgets/profile_image.dart';
 
@@ -56,7 +53,7 @@ class _HomepageState extends State<Homepage> {
           ),
 
 
-          const AccountBalanceAndTicket(),
+          const TicketVerificationAndUpcoming(),
 
 
           Padding(
@@ -97,7 +94,7 @@ class _HomepageState extends State<Homepage> {
                   if (snapshot.data != null && snapshot.data!.isNotEmpty) {
                     return  ListView.builder(
                       itemCount: snapshot.data!.length,
-                      itemBuilder: (context,index)=> BusTile()
+                      itemBuilder: (context,index)=> TripTile(trip: snapshot.data![index])
                   );
                   } else {
                     return Center(child: Text("No Trips on ${busDate.asString()}"),);

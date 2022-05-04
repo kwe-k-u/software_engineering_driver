@@ -18,6 +18,21 @@ extension DateParse on DateTime{
   DateTime noTime(){
     return DateTime(year,month,day);
   }
+
+  String toWordedDate() {
+    if (DateTime.now().noTime().isAtSameMomentAs(noTime())) {
+      return "Today";
+    } else if (DateTime.now().subtract(const Duration(days: 1))
+        .noTime()
+        .isAtSameMomentAs(noTime())) {
+      return "Yesterday";
+    } else
+    if (DateTime.now().add(const Duration(days: 1)).noTime().isAtSameMomentAs(
+        noTime())) {
+      return "Tomorrow";
+    }
+    return asString();
+  }
 }
 
 extension DateRangeParser on DateTimeRange{
@@ -32,7 +47,7 @@ extension DateRangeParser on DateTimeRange{
   }
 
 
-  List<DateTime> todateList(){
+  List<DateTime> toDateList(){
     List<DateTime> dates = [start.noTime()];
     DateTime current = start.noTime();
     while (!current.isAtSameMomentAs(end.noTime())){

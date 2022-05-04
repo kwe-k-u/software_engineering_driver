@@ -159,18 +159,6 @@ class _BusDetailsState extends State<BusDetails> {
                 ],
               ),
 
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: CustomButton(
-                    radius: 16,
-                    width: size.width * 0.4,
-                      text: "Book",
-                      onPressed: (){
-                        Navigator.pop(context);
-                      }),
-                ),
-              )
             ],
           ),
         ),

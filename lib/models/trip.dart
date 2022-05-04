@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class Trip{
   String tripId;
+  String driverId;
   String busId;
   String driverName;
   String driverNumber;
@@ -16,6 +17,7 @@ class Trip{
 
   Trip({
    required this.tripId,
+   required this.driverId,
    required this.busId,
    required this.driverName,
    required this.driverNumber,
@@ -32,6 +34,7 @@ class Trip{
   factory Trip.fromJson(Map<String, dynamic> map) => Trip(
       tripId: map["tripId"],
       busId: map["busId"],
+      driverId: map["driverId"],
       driverName: map["driverName"],
       driverNumber: map["driverNumber"],
       pickupLocation: map["pickupLocation"],
@@ -47,13 +50,14 @@ class Trip{
     "tripId": tripId,
     "busId": busId,
     "driverName": driverName,
+    "driverId" : driverId,
     "driverNumber": driverNumber,
     "pickupLocation": pickupLocation,
     "dropOffLocation": dropOffLocation,
     "fare": fare,
     "capacity": capacity,
     "tripDate" : DateTime(tripDate.year, tripDate.month, tripDate.day).toIso8601String(),
-    "setOffTime" : DateTime(tripDate.year, tripDate.month,setOffTime.hour, setOffTime.minute).toIso8601String(),
+    "setOffTime" : DateTime(tripDate.year, tripDate.month,tripDate.day, setOffTime.hour, setOffTime.minute).toIso8601String(),
 
   };
 }
