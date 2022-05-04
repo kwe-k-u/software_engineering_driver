@@ -1,4 +1,4 @@
-import 'package:bus_driver/models/trip.dart';
+import 'package:vroom_core/models/trip.dart';
 import 'package:bus_driver/screens/trip_ticket_list/trip_ticket_list.dart';
 import 'package:bus_driver/utils/constants.dart';
 import 'package:bus_driver/utils/extensions.dart';

@@ -3,10 +3,10 @@
 
 import 'dart:io';
 
-import 'package:bus_driver/models/bus.dart';
-import 'package:bus_driver/models/notification.dart';
-import 'package:bus_driver/models/ticket.dart';
-import 'package:bus_driver/models/trip.dart';
+import 'package:vroom_core/models/bus.dart';
+import 'package:vroom_core/models/notification.dart';
+import 'package:vroom_core/models/ticket.dart';
+import 'package:vroom_core/models/trip.dart';
 import 'package:bus_driver/utils/extensions.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';

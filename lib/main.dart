@@ -1,5 +1,4 @@
 import 'package:bus_driver/environment.dart';
-import 'package:bus_driver/models/app_state.dart';
 import 'package:bus_driver/screens/login_screen/login_screen.dart';
 import 'package:bus_driver/screens/page_control/page_control.dart';
 import 'package:bus_driver/utils/constants.dart';
@@ -8,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
+import 'package:vroom_core/models/app_state.dart';
 
 void main() async {
 

@@ -1,4 +1,4 @@
-import 'package:bus_driver/models/bus.dart';
+import 'package:vroom_core/models/bus.dart';
 import 'package:bus_driver/screens/create_trip/create_trip.dart';
 import 'package:bus_driver/widgets/custom_button.dart';
 import 'package:flutter/material.dart';

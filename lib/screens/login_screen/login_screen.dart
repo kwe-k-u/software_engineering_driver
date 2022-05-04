@@ -1,6 +1,6 @@
 
 import "package:flutter/material.dart";
-import 'package:bus_driver/models/app_state.dart';
+import 'package:vroom_core/models/app_state.dart';
 import 'package:bus_driver/screens/signup_screen/signup_screen.dart';
 import 'package:bus_driver/widgets/curved_background.dart';
 import 'package:bus_driver/widgets/custom_button.dart';

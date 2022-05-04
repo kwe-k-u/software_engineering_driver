@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:bus_driver/models/app_state.dart';
+import 'package:vroom_core/models/app_state.dart';
 import 'package:bus_driver/utils/constants.dart';
 import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:bus_driver/widgets/custom_button.dart';

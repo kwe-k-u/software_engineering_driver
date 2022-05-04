@@ -1,4 +1,4 @@
-import 'package:bus_driver/models/ticket.dart';
+import 'package:vroom_core/models/ticket.dart';
 import 'package:flutter/material.dart';
 
 

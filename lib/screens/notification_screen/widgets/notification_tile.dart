@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bus_driver/models/notification.dart';
+import 'package:vroom_core/models/notification.dart';
 import 'package:bus_driver/utils/constants.dart';
 import 'package:bus_driver/utils/extensions.dart';
 
