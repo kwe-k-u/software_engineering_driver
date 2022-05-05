@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:bus_driver/screens/homepage/homepage.dart';
 import 'package:bus_driver/screens/notification_screen/notification_screen.dart';
 import 'package:bus_driver/screens/settings_screen/settings_screen.dart';
-import 'package:bus_driver/utils/constants.dart';
+import 'package:vroom_core/utils/constants.dart';
 
 class PageControl extends StatefulWidget {
   const PageControl({Key? key}) : super(key: key);

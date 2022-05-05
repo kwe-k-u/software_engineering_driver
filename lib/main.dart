@@ -1,7 +1,7 @@
-import 'package:bus_driver/environment.dart';
+import 'package:vroom_core/environment.dart';
 import 'package:bus_driver/screens/login_screen/login_screen.dart';
 import 'package:bus_driver/screens/page_control/page_control.dart';
-import 'package:bus_driver/utils/constants.dart';
+import 'package:vroom_core/utils/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
         )
       ),
       // home: SplashScreen(),
-      home: BaseScreen()
+      home: const BaseScreen()
     );
   }
 }

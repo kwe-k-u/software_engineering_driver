@@ -1,9 +1,9 @@
 
 import 'package:bus_driver/screens/buses_list/widget/bus_info_tile.dart';
 import "package:flutter/material.dart";
-import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:vroom_core/models/bus.dart';
+import 'package:vroom_core/utils/constants.dart';
+import 'package:vroom_core/utils/firestore_helper.dart';
 
 
 class BusesList extends StatefulWidget {

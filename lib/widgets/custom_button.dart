@@ -1,4 +1,4 @@
-import 'package:bus_driver/utils/constants.dart';
+import 'package:vroom_core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 

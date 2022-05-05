@@ -1,14 +1,13 @@
-import 'package:vroom_core/models/bus.dart';
 import 'package:vroom_core/models/trip.dart';
-import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:vroom_core/models/app_state.dart';
 import 'package:bus_driver/screens/homepage/widgets/ticket_verfication_and_upcoming.dart';
-import 'package:bus_driver/utils/extensions.dart';
 import 'package:bus_driver/widgets/trip_tile.dart';
 import 'package:provider/provider.dart';
 import 'package:bus_driver/widgets/profile_image.dart';
+import 'package:vroom_core/utils/constants.dart';
+import 'package:vroom_core/utils/extensions.dart';
+import 'package:vroom_core/utils/firestore_helper.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);

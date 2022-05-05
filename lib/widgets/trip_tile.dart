@@ -1,7 +1,7 @@
 import 'package:vroom_core/models/trip.dart';
 import 'package:bus_driver/screens/trip_ticket_list/trip_ticket_list.dart';
-import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/utils/extensions.dart';
+import 'package:vroom_core/utils/constants.dart';
+import 'package:vroom_core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 
 

@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:vroom_core/models/notification.dart';import 'package:bus_driver/screens/notification_screen/widgets/notification_tile.dart';
-import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/utils/firestore_helper.dart';
+import 'package:vroom_core/utils/constants.dart';
+import 'package:vroom_core/utils/firestore_helper.dart';
 
 
 class NotificationScreen extends StatefulWidget {

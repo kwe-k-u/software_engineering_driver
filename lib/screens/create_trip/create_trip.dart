@@ -1,15 +1,15 @@
 import 'package:vroom_core/models/app_state.dart';
 import 'package:vroom_core/models/bus.dart';
 import 'package:vroom_core/models/trip.dart';
-import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/utils/extensions.dart';
-import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:bus_driver/widgets/custom_button.dart';
 import 'package:bus_driver/widgets/custom_dropdown.dart';
 import 'package:bus_driver/widgets/custom_text_field.dart';
 import 'package:bus_driver/widgets/input_section.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vroom_core/utils/constants.dart';
+import 'package:vroom_core/utils/extensions.dart';
+import 'package:vroom_core/utils/firestore_helper.dart';
 
 class CreateTrip extends StatefulWidget {
   final Trip? trip;

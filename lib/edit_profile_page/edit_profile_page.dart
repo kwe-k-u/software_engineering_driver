@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:vroom_core/models/app_state.dart';
-import 'package:bus_driver/utils/constants.dart';
-import 'package:bus_driver/utils/firestore_helper.dart';
 import 'package:bus_driver/widgets/custom_button.dart';
 import 'package:bus_driver/widgets/custom_text_field.dart';
 import 'package:bus_driver/widgets/input_section.dart';
 import 'package:bus_driver/widgets/profile_image.dart';
+import 'package:vroom_core/utils/constants.dart';
+import 'package:vroom_core/utils/firestore_helper.dart';
 
 class EditProfilePage extends StatefulWidget {
   final String name;
@@ -156,7 +156,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                             }
 
                                             await Future.wait(futures);
-                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Updating profile")))
+                                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Updating profile")))
                                             Navigator.pop(context, true);
                                           }
                                         },

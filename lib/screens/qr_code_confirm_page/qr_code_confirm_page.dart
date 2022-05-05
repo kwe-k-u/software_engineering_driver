@@ -1,4 +1,4 @@
-import 'package:bus_driver/utils/firestore_helper.dart';
+import 'package:vroom_core/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
 
 class QrCodeConfirmPage extends StatefulWidget {

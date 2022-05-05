@@ -2,8 +2,8 @@ import 'package:vroom_core/models/bus.dart';
 import 'package:bus_driver/screens/create_trip/create_trip.dart';
 import 'package:bus_driver/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:bus_driver/utils/constants.dart';
 import 'package:bus_driver/widgets/ticket_reciept.dart';
+import 'package:vroom_core/utils/constants.dart';
 
 
 class BusInfoTile extends StatelessWidget {
