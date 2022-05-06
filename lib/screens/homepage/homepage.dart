@@ -2,9 +2,9 @@ import 'package:vroom_core/models/trip.dart';
 import 'package:flutter/material.dart';
 import 'package:vroom_core/models/app_state.dart';
 import 'package:bus_driver/screens/homepage/widgets/ticket_verfication_and_upcoming.dart';
-import 'package:bus_driver/widgets/trip_tile.dart';
+import 'package:vroom_core/widgets/trip_tile.dart';
 import 'package:provider/provider.dart';
-import 'package:bus_driver/widgets/profile_image.dart';
+import 'package:vroom_core/widgets/profile_image.dart';
 import 'package:vroom_core/utils/constants.dart';
 import 'package:vroom_core/utils/extensions.dart';
 import 'package:vroom_core/utils/firestore_helper.dart';
@@ -93,7 +93,10 @@ class _HomepageState extends State<Homepage> {
                   if (snapshot.data != null && snapshot.data!.isNotEmpty) {
                     return  ListView.builder(
                       itemCount: snapshot.data!.length,
-                      itemBuilder: (context,index)=> TripTile(trip: snapshot.data![index])
+                      itemBuilder: (context,index)=> TripTile(
+                          trip: snapshot.data![index],
+                        onPressed: (){},
+                      )
                   );
                   } else {
                     return Center(child: Text("No Trips on ${busDate.asString()}"),);

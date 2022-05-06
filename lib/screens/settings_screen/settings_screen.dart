@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:bus_driver/edit_profile_page/edit_profile_page.dart';
 import 'package:vroom_core/models/app_state.dart';
 import 'package:bus_driver/screens/about_page/about_page.dart';
-import 'package:bus_driver/widgets/custom_button.dart';
-import 'package:bus_driver/widgets/heading_text.dart';
+import 'package:vroom_core/widgets/custom_button.dart';
+import 'package:vroom_core/widgets/heading_text.dart';
 import 'package:provider/provider.dart';
-import 'package:bus_driver/widgets/profile_image.dart';
+import 'package:vroom_core/widgets/profile_image.dart';
 
 
 

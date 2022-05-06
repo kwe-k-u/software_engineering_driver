@@ -1,6 +1,6 @@
 import 'package:vroom_core/models/ticket.dart';
 import 'package:vroom_core/utils/firestore_helper.dart';
-import 'package:bus_driver/widgets/ticket_tile.dart';
+import 'package:vroom_core/widgets/ticket_tile.dart';
 import 'package:flutter/material.dart';
 
 class TripTicketList extends StatefulWidget {

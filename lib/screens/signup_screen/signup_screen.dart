@@ -2,11 +2,11 @@
 import "package:flutter/material.dart";
 import 'package:vroom_core/models/app_state.dart';
 import 'package:bus_driver/screens/login_screen/login_screen.dart';
-import 'package:bus_driver/widgets/curved_background.dart';
-import 'package:bus_driver/widgets/custom_button.dart';
-import 'package:bus_driver/widgets/custom_text_field.dart';
-import 'package:bus_driver/widgets/heading_text.dart';
-import 'package:bus_driver/widgets/input_section.dart';
+import 'package:vroom_core/widgets/curved_background.dart';
+import 'package:vroom_core/widgets/custom_button.dart';
+import 'package:vroom_core/widgets/custom_text_field.dart';
+import 'package:vroom_core/widgets/heading_text.dart';
+import 'package:vroom_core/widgets/input_section.dart';
 import 'package:provider/provider.dart';
 
 

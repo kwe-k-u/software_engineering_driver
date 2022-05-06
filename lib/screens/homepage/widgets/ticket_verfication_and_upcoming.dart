@@ -1,7 +1,7 @@
 import 'package:vroom_core/models/app_state.dart';
 import 'package:vroom_core/models/trip.dart';
 import 'package:bus_driver/screens/qr_code_scanner_page/qr_code_scanner_page.dart';
-import 'package:bus_driver/widgets/custom_button.dart';
+import 'package:vroom_core/widgets/custom_button.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
 import 'package:vroom_core/utils/extensions.dart';
